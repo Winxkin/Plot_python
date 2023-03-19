@@ -33,10 +33,18 @@ print(recall)
 print('F1-score:')
 print(f1_score)
 
+#change to %
+for i in range(0,len(precision)):
+    precision[i] = precision[i]*100
+    recall[i] = recall[i]*100
+    f1_score[i] = f1_score[i]*100
+
 fig = plt.figure()
 fig.suptitle(str(sys.argv[2]))
-plt.plot(recall,'#ff0000',label='recall')
-plt.plot(precision,'#0000ff',label='precision')
-plt.plot(f1_score,'#00ff40',label='F1-score')
+plt.plot(recall,'r.-',label='recall')
+plt.plot(precision,'b.-',label='precision')
+plt.plot(f1_score,'g.-',label='F1-score')
+plt.xlabel('times caculation')
+plt.ylabel('percentage %')
 plt.legend()
 plt.show()
